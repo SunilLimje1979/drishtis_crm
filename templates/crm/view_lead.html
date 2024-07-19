@@ -58,7 +58,6 @@
             border-radius: 10px;
             margin-top: 15px;
             height: 20px; /* Example height */
-            height: 20px; /* Example height */
             width: 100%; /* Example width */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Shadow style */ 
         }
@@ -68,9 +67,10 @@
         #listContainer li {
             border: 1px solid #D9D6C4; /* Yellow border */
             background-color:rgb(217,214,196); /* Yellow background */
-            padding: 10px; /* Add padding */
-            margin-bottom: 12px; /* Add margin bottom for spacing */
+            padding: 5px 8px; /* Reduced padding */
+            margin-bottom: 8px; /* Reduced margin */
             font-size: 1rem; /* Increase text font size */
+            word-wrap: break-word; /* Ensure text wraps within the list item */
         }
         .list-group-item {
             display: flex;
@@ -86,6 +86,9 @@
         .list-group-item .section-20 {
             width: 23%;
         }
+        .list-group-item .section-20 a {
+            padding: 0 1px; /* Reduced padding around icons */
+        }
         .name {
             margin-right: 0px; /* Adjust the margin as needed */
         }
@@ -95,7 +98,7 @@
         .list-group-item a {
             text-decoration: none;
             color: black; /* Change color as needed */
-            font-size: 1 rem; /* Increase icon size */
+            font-size: 1rem; /* Increase icon size */
         }
         .list-group-item a:hover {
             color: gray; /* Change color as needed */
@@ -105,16 +108,20 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 5px; /* Adjust the margin as needed */
-            font-size: 0.9 rem; /* Increase text font size */
+            font-size: 0.9rem; /* Increase text font size */
         }
         .flex-grow {
             flex-grow: 1;
         }
         .action-icons {
             display: flex;
-            gap: 10px;
+            gap: 6px;
         }
+        
+
+
     </style>
+    
 </head>
 <body>
     <!-- Navbar with menu drawer icon -->
