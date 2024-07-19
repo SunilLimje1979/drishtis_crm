@@ -113,6 +113,7 @@
                         <input type="text" class="form-control" id="password" name="password"  required>
                     </div>
                     <button id="updateProfileBtn">Log in</button>
+                    
                 </form>
 
                 {% if messages %}
@@ -158,5 +159,68 @@
           });
       });
   </script>
+
+  <script>
+    // JavaScript for handling PWA installation
+    let installPrompt = null;
+    const installButton = document.querySelector("#install");
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        installPrompt = event;
+        installButton.removeAttribute("hidden");
+    });
+
+    installButton.addEventListener("click", async () => {
+        if (!installPrompt) return;
+        const result = await installPrompt.prompt();
+        console.log(`Install prompt was: ${result.outcome}`);
+        disableInAppInstallPrompt();
+    });
+
+    window.addEventListener("appinstalled", () => {
+        disableInAppInstallPrompt();
+    });
+
+    function disableInAppInstallPrompt() {
+        installPrompt = null;
+        installButton.setAttribute("hidden", "");
+    }
+</script> 
+{% comment %} 
+
+<script>
+    // Assuming 'appversion' is provided by a templating engine and correctly injected into the script
+    const serverAppVersion = '{{serverappversion}}';
+
+    // Log the appversion to the console
+    console.log('Server App Version:', serverAppVersion);
+
+    // Retrieve the stored app version from local storage
+    const storedAppVersion = localStorage.getItem('serverAppVersion');
+
+    // Assuming 'clientAppVersion' is provided directly within the script
+    const clientAppVersion = '{{clientappversion}}';
+
+    // Compare the stored version (client) and server app versions
+    if (!storedAppVersion || storedAppVersion < serverAppVersion) {
+        // Clear caches if necessary
+        if (caches && caches.keys) {
+            caches.keys().then(function(names) {
+                for (let name of names) {
+                    caches.delete(name);
+                }
+            });
+        }
+        // Update the stored app version to the new server app version
+        localStorage.setItem('serverAppVersion', serverAppVersion);
+        // Hard refresh the page to load the new version
+        window.location.reload();
+    } else {
+        // Log if no update is necessary
+        console.log('Client app version is up to date.');
+    }
+</script> {% endcomment %}
+
 </body>
 </html>

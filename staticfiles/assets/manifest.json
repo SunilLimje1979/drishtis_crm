@@ -1,17 +1,17 @@
 {
-    "name": "Vighnaharta Gold",
-    "short_name": "Vighnaharta Gold",
-    "description": "vgold Web App",
+    "name": "Drishtis Crm",
+    "short_name": "Drishtis Crm",
+    "description": "drishtis Web App",
     "dir": "auto",
     "lang": "en-US",
     "display": "standalone",
     "orientation": "any",
-    "start_url": "/vgold/login/",
+    "start_url": "/drishtis_crm/login/",
     "background_color": "#FFFFFF",
     "theme_color": "#29277A",
     "icons": [
         {
-        "src": "/vgold/static/assets/img/vgoldlogo.png",
+        "src": "/drishtis_crm/static/assets/img/vgoldlogo.png",
         "sizes": "512x512",
         "type": "image/png"
     }

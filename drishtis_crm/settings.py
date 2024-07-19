@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*","vgold.app"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
