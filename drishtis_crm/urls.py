@@ -21,9 +21,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 
-    path('vgoldcrm/admin/', admin.site.urls),
+    path('drishtis_crm/admin/', admin.site.urls),
     
-    path('vgoldcrm/', include('crm.urls')),
+    path('drishtis_crm/', include('crm.urls')),
     
     path('', include('pwa.urls')),
     
